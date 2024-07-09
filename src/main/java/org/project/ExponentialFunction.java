@@ -8,9 +8,7 @@ public class ExponentialFunction {
         Scanner scanner = new Scanner(System.in);
 
         // Input variables
-        double a = 0;
-        double b = 0;
-        double x = 0;
+        double a = 0, b = 0, x = 0;
 
         // Input and validation for 'a'
         while (true) {
@@ -63,7 +61,13 @@ public class ExponentialFunction {
      * @throws NumberFormatException if the input is not a valid number
      */
     public static double parseInput(String input) throws NumberFormatException {
-        if (input.contains("/")) {
+        input = input.trim().toLowerCase();  // Normalize the input
+
+        if (input.equals("pi")) {
+            return Math.PI;  // Return the constant PI
+        } else if (input.equals("e")) {
+            return Math.E;  // Return the constant E
+        } else if (input.contains("/")) {
             String[] parts = input.split("/");
             if (parts.length == 2) {
                 double numerator = Double.parseDouble(parts[0]);
@@ -75,6 +79,25 @@ public class ExponentialFunction {
                 }
             } else {
                 throw new NumberFormatException("Invalid fraction format.");
+            }
+        } else if (input.startsWith("sqrt(") && input.endsWith(")")) {
+            String number = input.substring(5, input.length() - 1);
+            double value = Double.parseDouble(number);
+            if (value < 0) {
+                throw new NumberFormatException("Cannot take square root of a negative number.");
+            }
+            return Math.sqrt(value);
+        } else if (input.startsWith("root(") && input.endsWith(")")) {
+            String[] parts = input.substring(5, input.length() - 1).split(",");
+            if (parts.length == 2) {
+                int n = Integer.parseInt(parts[0]);
+                double x = Double.parseDouble(parts[1]);
+                if (x < 0 && n % 2 == 0) {
+                    throw new NumberFormatException("Cannot take even root of a negative number.");
+                }
+                return Math.pow(x, 1.0 / n);
+            } else {
+                throw new NumberFormatException("Invalid root format. Use root(n,x)");
             }
         } else {
             return Double.parseDouble(input);
