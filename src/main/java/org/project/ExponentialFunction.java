@@ -7,6 +7,16 @@ public class ExponentialFunction {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        // Instructions
+        System.out.println("Welcome to the Exponential Function Calculator!");
+        System.out.println("You can enter values in the following formats:");
+        System.out.println("- Real numbers (e.g., 5, -3.2, 0.25)");
+        System.out.println("- Fractions as 'numerator/denominator' (e.g., 1/2, 3/4)");
+        System.out.println("- Constants 'pi' and 'e' for mathematical constants π and e");
+        System.out.println("- Roots in the format 'root(n,x)' for the n-th root of x");
+        System.out.println("- 'sqrt(x)' for the square root of x");
+        System.out.println("Please enter the values as instructed when prompted.\n");
+
         // Input variables
         double a = 0, b = 0, x = 0;
 
