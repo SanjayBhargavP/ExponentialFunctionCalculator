@@ -2,8 +2,20 @@ package org.project;
 
 import java.util.Scanner;
 
+/**
+ * The ExponentialFunction class provides a console-based application
+ * for calculating the exponential function a * b^x, where a and b
+ * are real constants and x is a real variable.
+ */
 public class ExponentialFunction {
 
+    /**
+     * The main method is the entry point for the application. It handles
+     * user input, validates the input, performs the calculation, and
+     * outputs the result.
+     *
+     * @param args command-line arguments (not used)
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -64,7 +76,8 @@ public class ExponentialFunction {
     }
 
     /**
-     * This method parses the input and handles fractions in the form of numerator/denominator.
+     * This method parses the input and handles fractions in the form of numerator/denominator,
+     * constants 'pi' and 'e', square roots, and n-th roots.
      *
      * @param input the user input string
      * @return the parsed double value
