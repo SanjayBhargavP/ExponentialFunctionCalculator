@@ -99,7 +99,7 @@ public class ExponentialFunctionApp extends Application {
         VBox vbox = new VBox(10, hBoxA, hBoxB, hBoxX, calculateButton, resultLabel, helpButton);
         Scene scene = new Scene(vbox, 400, 300);
 
-        primaryStage.setTitle("Exponential Function Calculator for a(b^x)");
+        primaryStage.setTitle("Exponential Function Calculator v1.0.0");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
